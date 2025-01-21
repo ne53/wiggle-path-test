@@ -94,7 +94,7 @@ const WigglePath = ({ d, pointCount = 10, amplitude = 1, speed = 0.1 }) => {
     >
       <path
         d={wigglePath}
-        fill="blue" // 色を設定
+        fill="white" // 色を設定
         stroke="black"
         strokeWidth="0.1"
         strokeLinejoin="round"
