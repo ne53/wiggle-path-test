@@ -89,8 +89,8 @@ const WigglePath = ({ d, pointCount = 10, amplitude = 1, speed = 0.1 }) => {
     <svg
       viewBox="0 0 100 100" // SVGのサイズを大きくする
       xmlns="http://www.w3.org/2000/svg"
-      width="5000" // 画面に合わせたサイズ
-      height="500"
+      width="1000" // 画面に合わせたサイズ
+      height="700"
     >
       <path
         d={wigglePath}
