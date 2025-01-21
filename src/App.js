@@ -23,8 +23,19 @@ const generateWigglePoints = (path, pointCount, seed, amplitude) => {
     });
   }
 
+  // 始点と終点を重ねる処理
+  const firstPoint = points[0];
+  const lastPoint = points[points.length - 1];
+  points[points.length - 1] = { // 最後の点を最初の点に重ねる
+    x: firstPoint.x,
+    y: firstPoint.y,
+    offsetX: lastPoint.offsetX,
+    offsetY: lastPoint.offsetY,
+  };
+
   return points;
 };
+
 
 const smoothPath = (points) => {
   if (points.length < 2) return "";
