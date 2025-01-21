@@ -108,6 +108,7 @@ const App = () => {
   const [pathData, setPathData] = useState("");
   const [amplitude, setAmplitude] = useState(10); // 揺れ幅
   const [speed, setSpeed] = useState(0.1); // 速さ
+  const [pointCount, setPointCount] = useState(10); // 初期のpointCount
 
   useEffect(() => {
     if (svgRef.current) {
@@ -140,9 +141,10 @@ const App = () => {
             d={pathData}
             amplitude={amplitude}
             speed={speed}
+            pointCount={pointCount} // pointCountを渡す
           />
         )}
-        
+
         {/* React-BootstrapのForm.Rangeを使ったスライダー */}
         <div>
           <label>
@@ -164,6 +166,17 @@ const App = () => {
               step={0.001}
               value={speed}
               onChange={(e) => setSpeed(Number(e.target.value))}
+            />
+          </label>
+        </div>
+        <div>
+          <label>
+            ポイント数:
+            <Form.Range
+              min={5}
+              max={50}
+              value={pointCount}
+              onChange={(e) => setPointCount(Number(e.target.value))}
             />
           </label>
         </div>
